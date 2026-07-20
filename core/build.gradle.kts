@@ -41,8 +41,8 @@ publishing {
         maven {
             name = "triumph"
             credentials {
-                username = providers.gradleProperty("triumph.repo.user").get()
-                password = providers.gradleProperty("triumph.repo.token").get()
+                username = providers.gradleProperty("triumph.repo.user").orNull
+                password = providers.gradleProperty("triumph.repo.token").orNull
             }
 
             url = uri("https://repo.triumphteam.dev/snapshots/")
